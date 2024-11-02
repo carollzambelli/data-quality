@@ -1,3 +1,6 @@
+"""
+Main module to prepare data and generate validation logs
+"""
 import sys
 import pandas as pd
 import json

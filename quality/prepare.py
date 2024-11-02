@@ -1,3 +1,6 @@
+"""
+Data preparation module. 
+"""
 import pandas as pd
     
 class Prepare:

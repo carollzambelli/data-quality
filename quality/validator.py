@@ -1,10 +1,12 @@
+"""
+Data validation module. 
+"""
 import  numpy as np
 import logging
 import pandas as pd
 import datetime
     
 logger = logging.getLogger()
-
 
 class Validator:
     
