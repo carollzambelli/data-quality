@@ -20,8 +20,7 @@ class Validator:
 
     def key_validation(self):
         if self.data[self.keys].nunique().item() != len(self.data):
-            logger.warning(
-                f"KEY_DUPLICATION ; {self.keys}; {datetime.datetime.now()}")
+            logger.warning(f"KEY_DUPLICATION ; {self.keys}; {datetime.datetime.now()}")
 
     def null_validation(self):
         for i in self.i_null:
@@ -30,8 +29,7 @@ class Validator:
             value_dev = self.configs.iloc[i]["value_dev"]
             n_null = len(self.data.loc[self.data[col].isnull()])/len(self.data)
             if not value - value_dev <= n_null <= value + value_dev:
-                logger.warning(
-                    f"NULL_TOLERANCE ; {col}; {datetime.datetime.now()}")
+                logger.warning(f"NULL_TOLERANCE ; {col}; {datetime.datetime.now()}")
 
     def distribution_validation(self):
         for i in self.i_dist:
@@ -40,8 +38,7 @@ class Validator:
             categ = self.configs.iloc[i]["category"]
             value_dev = self.configs.iloc[i]["value_dev"]
             if not value - value_dev <= len(self.data[self.data[col] == categ]) <= value + value_dev:
-                logger.warning(
-                    f"DISTRIBUTION_DEVIATION ; {col}; {datetime.datetime.now()}")
+                logger.warning(f"DISTRIBUTION_DEVIATION ; {col}; {datetime.datetime.now()}")
                 
     def limits_validation(self):
         for i in self.i_limits:
@@ -51,5 +48,4 @@ class Validator:
             execution = f"self.data.loc[self.data.{col} {operator} {value}]"
             n =len(eval(execution))
             if n > 0:
-                logger.warning(
-                    f"{n} CASES OUT OF BOUNDS ; {col}; {datetime.datetime.now()}")
+                logger.warning(f"{n} CASES OUT OF BOUNDS ; {col}; {datetime.datetime.now()}")
