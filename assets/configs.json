@@ -1,7 +1,0 @@
-{
-    "data_path" : "dataset/house_price.csv",
-    "meta_path" : "assets/metadado.xlsx",
-    "funcs_validation" : ["key_validation","limits_validation","null_validation","distribution_validation"],
-    "report_path": "dataset/logs.log",
-    "output_cols" : ["id", "preco", "quartos", "banheiros", "area_util", "area_total", "andares", "vista_mar", "qualidade_vista"]
-}

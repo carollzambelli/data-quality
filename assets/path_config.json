@@ -1,0 +1,5 @@
+{
+    "data_path" : "dataset/house_price.csv",
+    "meta_path" : "assets/metadado.xlsx",
+    "report_path": "dataset/logs.log"
+}
